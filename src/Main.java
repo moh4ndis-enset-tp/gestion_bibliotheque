@@ -1,4 +1,4 @@
-// filepath: /Users/admin/IdeaProjects/n7/Problem2/src/Main.java
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Test de la classe Livre");
