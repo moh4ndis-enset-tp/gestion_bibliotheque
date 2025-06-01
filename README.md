@@ -57,19 +57,26 @@ Livre[] livresTrouves = biblio.Cherche("Victor Hugo");
 
 ## Diagramme de Classes
 
-```
-+----------------+       +------------------+
-|     Livre      |       |   Bibliotheque   |
-+----------------+       +------------------+
-| -titre: String |       | -livres: Livre[] |
-| -auteurs: String[] |<--| -nombreLivres: int|
-| -ISBN: String  |       +------------------+
-| -prix: double  |       | +capacite(): int |
-+----------------+       | +ajoutelivre(Livre): boolean |
-| +afficher()    |       | +size(): int     |
-| +getters/setters |     | +afficher()      |
-+----------------+       | +Cherche(String): Livre[] |
-                         +------------------+
+```mermaid
+classDiagram
+    class Livre {
+        - String titre
+        - String[] auteurs
+        - String ISBN
+        - double prix
+        + afficher()
+        + getters/setters
+    }
+    class Bibliotheque {
+        - Livre[] livres
+        - int nombreLivres
+        + capacite() int
+        + ajoutelivre(Livre) boolean
+        + size() int
+        + afficher()
+        + Cherche(String) Livre[]
+    }
+    Bibliotheque "1" o-- "*" Livre : contient
 ```
 
 ## Auteur
